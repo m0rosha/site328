@@ -1,0 +1,150 @@
+ .navigation{
+    background-color: #FF6347;
+    margin-left:-8px ;
+    margin-top: -8px;
+    padding-top:10px
+    
+
+}
+
+
+
+body, html {
+    background-color: #000000;
+    margin-top: 0;
+    margin-left:0 ;
+    margin-right:0 ;
+    margin-bottom: 0;
+    overflow: inherit;
+    
+    padding: 0;
+}
+.topper {
+    padding-left: 50px;
+    padding-top: 50px;
+    margin-top: 10px;
+    color: #FFF8E1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 1;
+    font-size: 40px;
+    text-decoration-line: none;
+}
+
+
+.nav_buttons {
+    padding-left: 1200px;
+    font-size: 20px;
+    padding-bottom: 10px;
+    font-style: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    color: #FFF8E1;
+}
+
+.articles_container {
+    background-image: url("https://c.pxhere.com/images/ed/6d/6f8f2820848433558a0982c074b5-1636140.jpg!d");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    padding-right: 0; 
+    height: calc(100vh - 50px); 
+    
+}
+.articles_container_title {
+    padding-left: 40px;
+    padding-top: 250px;
+    text-align: center;
+    color: #FFF8E1;
+    
+    
+}
+.w_r_b {
+    padding-left: 600px;
+    padding-right: 600px;
+    font-size: 60px;
+    padding-bottom: 0;
+    font-weight: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    
+}
+.w_r_b_i_l {
+    margin: 0px;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: -10px;
+    padding-bottom: -10px;
+
+    font-size: 40px;
+    font-weight: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.f_v_e {
+    padding-left: 600px;
+    padding-right: 600px;
+    font-size: 20px;
+    padding-bottom: 0;
+    font-weight: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.locations a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+.products a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+.our_story a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+.topper a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.careers a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+.bottom_bar {
+    background-color: #333;
+    color: #FFF8E1;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    transition: bottom 0.3s ease; 
+    pointer-events: none; 
+    opacity: 0; 
+}
+
+.bottom_bar.show {
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.0);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: tomato;
+    outline: 1px solid tomato ;
+    border-radius: 25px;
+  }

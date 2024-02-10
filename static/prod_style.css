@@ -1,0 +1,24 @@
+.body {
+    margin: 0px;
+    padding: 0px;
+    background-color: aquamarine;
+}
+.articles {
+    background-color: tomato;
+}
+.home_link {
+    color: #FFF8E1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 1;
+    font-size: 40px;
+    text-decoration-line: none;
+}
+.Ur_cart {
+    color: #FFF8E1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 1;
+    font-size: 40px;
+    text-decoration-line: none;
+}
