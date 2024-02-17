@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="/static/prod_style.css">
 </head>
 <body>
-    <main>
-        <div class="articles">
-            <nav class="navigation">
-                <span class="topper"><a class="home_link" href="/">Healfy</a></span>
-                
-                <h1 class="Ur_cart">Your cart</h1>
-                <a class="cart_img"href="/"><img src="https://static.vecteezy.com/system/resources/previews/019/787/018/original/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png" alt="cha"></a>
+    <div class="main">
+        <div class="top_bar">
+            <div class="home_button">
+                <a class="home_button_link"href="/">Healfy</a>
+            </div>
+            <div class="cart_buttons">
+                <span class="cart_buttons2">
+                    <a class="cart_word"href="/">Your cart</a>
+                </span>
+            </div>
         </div>
-        <div class="products">
-            <a class="prod1" href="/home/products/{id}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/1200px-Tomato_je.jpg" alt="no image"></a>
+        <div class="product_side">
+            <a class="prod1_button"href="/products/{id}"><img class="prod1_img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/1200px-Tomato_je.jpg" alt="product"></a>
+            <div class="product1_n_p">
+                <span><h1 class="product1_name">Tomato</h1></span>
+                <span><h1 class="product1_price">3.99$</h1></span>
+            </div>
+        </div>
+    </div>
+                
 
 
-        </div> 
-    </main>
     
 </body>
 </html>

@@ -1,12 +1,15 @@
-.body {
-    margin: 0px;
-    padding: 0px;
-    background-color: aquamarine;
+body,html {
+    background-color:#FFF8E1;
+    padding: 0;
+    margin: 0;
 }
-.articles {
+.top_bar {
     background-color: tomato;
+    padding-left: 42px;
+    padding-top: 2px;
+    padding-bottom: 11px;
 }
-.home_link {
+.home_button_link {
     color: #FFF8E1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
@@ -14,11 +17,51 @@
     font-size: 40px;
     text-decoration-line: none;
 }
-.Ur_cart {
+.cart_buttons {
+    padding-left: 1600px;
+
+}
+.cart_word {
     color: #FFF8E1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
     font-weight: 1;
-    font-size: 40px;
+    font-size: 20px;
     text-decoration-line: none;
 }
+.product_side {
+    margin-left: 159px;
+    margin-top: 48px;
+}
+.prod1_img {
+    
+    
+    width: 238px;
+    height: 217px;
+    border: 2px solid tomato; /* Add a solid border */
+    border-radius: 25px;
+}
+.product1_name {
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 1;
+    
+    font-size: 20px;
+    text-decoration-line: none;
+    
+    margin: 0;
+}
+.product1_price {
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 1;
+    
+    
+    font-size: 20px;
+    text-decoration-line: none;
+    
+    margin: 0;
+}
+
