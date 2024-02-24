@@ -18,13 +18,17 @@
                 </span>
             </div>
         </div>
+        <div class="products123">
+        {%for prod_cont in products %}
         <div class="product_side">
-            <a class="prod1_button"href="/products/{id}"><img class="prod1_img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/1200px-Tomato_je.jpg" alt="product"></a>
+            <a class="prod1_button"href="/products/{{prod_cont[0]}}"><img class="prod1_img" src="{{prod_cont[3]}}" alt="product"></a>
             <div class="product1_n_p">
-                <span><h1 class="product1_name">Tomato</h1></span>
-                <span><h1 class="product1_price">3.99$</h1></span>
+                <span><h1 class="product1_name">{{prod_cont[1]}}</h1></span>
+                <span><h1 class="product1_price">{{prod_cont[2]}}$</h1></span>
             </div>
         </div>
+        {% endfor %}
+    </div>
     </div>
                 
 

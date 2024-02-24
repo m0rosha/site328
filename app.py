@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from db import get_all_products, add_products
 
 app = Flask(__name__, template_folder='', static_folder='static')
 
@@ -8,7 +9,8 @@ def index():
 
 @app.route("/home/products")
 def products():
-    return render_template('./products.html')
+    
+    return render_template('./products.html', products=get_all_products())
 
 @app.route("/home/story")
 def story():
@@ -21,6 +23,8 @@ def locations():
 @app.route("/home/careers")
 def careers():
     return render_template('./careers.html')
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
