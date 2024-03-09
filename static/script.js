@@ -5,6 +5,8 @@ window.onscroll = function() {
 
     if (prevScrollPos > currentScrollPos) {
         document.getElementById("bottomBar").classList.remove("show");
+        
+
     } else {
         document.getElementById("bottomBar").classList.add("show");
     }

@@ -14,17 +14,18 @@
             </div>
             <div class="cart_buttons">
                 <span class="cart_buttons2">
-                    <a class="cart_word"href="/">Your cart</a>
+                    <a class="cart_word"href="/home/cart">Your cart</a>
                 </span>
             </div>
         </div>
         <div class="products123">
         {%for prod_cont in products %}
         <div class="product_side">
-            <a class="prod1_button"href="/products/{{prod_cont[0]}}"><img class="prod1_img" src="{{prod_cont[3]}}" alt="product"></a>
+            <h1 class="prod1_button"href="/home/products"><img class="prod1_img" src="{{prod_cont[3]}}" alt="product"></h1>
             <div class="product1_n_p">
                 <span><h1 class="product1_name">{{prod_cont[1]}}</h1></span>
                 <span><h1 class="product1_price">{{prod_cont[2]}}$</h1></span>
+                </span><button class="add-to-cart" data-product-id="{{prod_cont[0]}}" data-product-name="{{prod_cont[1]}}" data-product-price="{{prod_cont[2]}}">Add to Cart</button>
             </div>
         </div>
         {% endfor %}
@@ -35,4 +36,40 @@
 
     
 </body>
+  <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartLink = document.querySelector('.cart_word');
+
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const productId = this.getAttribute('data-product-id');
+                    const productName = this.getAttribute('data-product-name');
+                    const productPrice = this.getAttribute('data-product-price');
+
+                    const newItem = {
+                        id: productId,
+                        name: productName,
+                        price: productPrice
+                    };
+
+                    cartItems.push(newItem);
+                    updateCartLink();
+                    saveCartToLocalStorage();
+                });
+            });
+
+            function updateCartLink() {
+                cartLink.textContent = `Your Cart (${cartItems.length} items)`;
+            }
+
+            function saveCartToLocalStorage() {
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+            }
+        });
+    </script>
+    
+
 </html>

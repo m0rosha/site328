@@ -14,15 +14,22 @@ def products():
 
 @app.route("/home/story")
 def story():
-    return render_template('./story.html')
+    with open("static\story.txt", "r") as file:
+        txt_content = file.read()
+    return render_template('./story.html', txt_content=txt_content)
 
 @app.route("/home/locations")
 def locations():
-    return render_template('./locations.html')
+    with open("static\locations.txt", "r") as file:
+        txt_content = file.read()
+    return render_template('./locations.html', txt_content=txt_content)
 
 @app.route("/home/careers")
 def careers():
     return render_template('./careers.html')
+@app.route("/home/cart")
+def cart():
+    return render_template('./cart.html',products=get_all_products())
 
 
 
