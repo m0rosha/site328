@@ -14,7 +14,9 @@
             </div>
             <div class="cart_buttons">
                 <span class="cart_buttons2">
-                    <a class="cart_word"href="/home/cart">Your cart {{cart}}</a>
+                    
+                    <a class="cart_word"href="/home/cart">Your cart {{cart_sum}}x</a>
+                    
                 </span>
             </div>
         </div>
@@ -27,7 +29,7 @@
                 <span><h1 class="product1_price">{{prod_cont[2]}}$</h1></span>
                 <form action="addToCart" method="post">
                 
-                    <button class="add-to-cart" >Add to Cart {{cart}} </button> 
+                    <button class="add-to-cart" >Add to Cart</button> 
                     <input type="hidden" value="{{prod_cont[0]}}" name="id">
                 </form>
             </div>

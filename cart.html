@@ -10,102 +10,41 @@
     <main class="main">
         <div class="top_bar">
             <div class="home_button">
-                <a class="home_link"href="/">Healfy</a>
-                <button type="button" class="clear_button" id="clearCartButton">Clear Cart</button>
-
+                <a class="home_link" href="/">Healfy</a>
+                <form class='clear_button_form'id="clearCartForm" action="/home/clearCart" method="post">
+                    <button type="submit" class="clear_button">Clear Cart</button>
+                </form>
             </div>
         </div>
-            <div class="main_side">
-                <h1 class="txt1">Your cart</h1>
-                <div class="cart_side">
-                    <div class="products_area">
-                        <div class="products_area" id="cartProducts">
-                           
-                        </div>
-                        
-                        
-                        
-
-                    </div>
-                    <p class="txt2">Thank You!</p>
-                    {%for i in cart%}
-                    <p class="txt3">Total: {{total}}$ <span id="totalAmount"></span></p>
-                    <a class="checkout_button" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Checkout</a>
-                    {%endfor%}
+        <div class="main_side">
+            <h1 class="txt1">Your cart</h1>
+            <div class="cart_side">
+                <div class="products_area" id="cartProducts">
+                    {% for item in cart %}
+                        <span class="product_quantity">{{ item[1] }}x <span class="item_name">
+                            {% for product in products %}
+                                {% if product[0] == item[0] %}
+                                    {{ product[1] }}
+                                {% endif %}
+                            {% endfor %}
+                        </span></span>
+                        <span class="item_price">
+                            {% for product in products %}
+                                {% if product[0] == item[0] %}
+                                    {{ product[2] }}$
+                                {% endif %}
+                            {% endfor %}
+                        </span>
+                        <br>
+                    {% endfor %}
                 </div>
-
-                
             </div>
-             
+            <div>  
+                <p class="txt2">Thank You!</p>
+                <p class="txt3">Total: {{0 or total }}$ <span id="totalAmount"></span></p>
+                <a class="checkout_button" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Checkout</a>
+            </div>
         </div>
     </main>
-
-    
-
-    
 </body>
-<!--<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-
-        const cartProductsContainer = document.getElementById('cartProducts');
-        const totalAmountElement = document.getElementById('totalAmount');
-
-        
-        function updateCartView() {
-            cartProductsContainer.innerHTML = ""; 
-
-            
-            const uniqueItems = new Map();
-
-           
-            cartItems.forEach(item => {
-                if (uniqueItems.has(item.id)) {
-                    
-                    uniqueItems.set(item.id, {
-                        ...item,
-                        quantity: uniqueItems.get(item.id).quantity + 1
-                    });
-                } else {
-                    
-                    uniqueItems.set(item.id, {
-                        ...item,
-                        quantity: 1
-                    });
-                }
-            });
-
-            
-            uniqueItems.forEach(item => {
-                const productInfo = document.createElement('div');
-                productInfo.classList.add('product_info');
-                productInfo.innerHTML = `
-                    <span class="product_quantity"> x${item.quantity} <span class="item_name">${item.name}</span></span>
-                    
-                    <span class="item_price">${item.price}$</span>
-                    
-                `;
-                cartProductsContainer.appendChild(productInfo);
-            });
-
-            
-            const totalAmount = [...uniqueItems.values()].reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0);
-            totalAmountElement.textContent = `$${totalAmount.toFixed(2)}`;
-        }
-        function clearCart() {
-            localStorage.removeItem('cart');
-            cartItems.length = 0;
-            updateCartView();
-        }
-
-        updateCartView();
-
-        clearCartButton.addEventListener('click', clearCart);
-
-        
-        
-
-    });
-</script> !-->
-
 </html>

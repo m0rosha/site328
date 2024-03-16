@@ -50,6 +50,7 @@ body,html {
     border-radius: 15px;
     background-color: tomato;
     position: absolute;
+    padding: 25px;
     left: 39px;
     top: 217px;
     width: 547px;
@@ -59,8 +60,8 @@ body,html {
 }
 .txt2 {
     position: absolute;
-    left: 811px;
-    top: 170px;
+    padding-top: 0px;
+    padding-left: 1050px;
     font-size: 90px;
     color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -69,8 +70,8 @@ body,html {
 }
 .txt3 {
     position: absolute;
-    left: 763px;
-    top: 454px;
+    padding-left: 1000px;
+    padding-top: 100px;
     font-size: 96px;
     color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -113,6 +114,9 @@ body,html {
     
     
 }
+.clear_button_form{
+    margin-left: 50px;
+}
 .clear_button {
     font-size: 12px;
     background-color: #FFF8E1;
@@ -129,8 +133,8 @@ body,html {
 }
 .checkout_button {
     position: absolute;
-    right: 900px;
-    top: 800px;
+    right:38%;
+    top: 80%;
     background-color: tomato; 
     border: tomato 1px solid;
     border-radius: 15px;

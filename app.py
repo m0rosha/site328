@@ -51,7 +51,7 @@ def cart():
             
             element = get_prod_by_id(id)
             
-            total += float(element[2]) * elementsId[id]
+            total += float(element[2]).__round__(2) * elementsId[id]
              
             cart.append((element[0], elementsId[id]))
 
@@ -60,27 +60,31 @@ def cart():
         print(e)
         return render_template('cart.html', cart=[],products=get_all_products())
 @app.route("/home/products")
+
+
+@app.route("/home/products", methods=["GET", "POST"])
 def products():
     if request.method == "POST":
-       
         try:
             id = request.form.get('id')
-            cart = session['cart']
-            if id in cart.keys():
-                cart[id] = int(cart[id]) + 1
-            else:
-                cart[id] = 1
+            cart = session.get('cart', {})
+            cart[id] = cart.get(id, 0) + 1
             session['cart'] = cart
-            return render_template('products.html', products=get_all_products(),cart=cart)
-        except:
-            session['cart'] = {id:1}
-        return redirect(url_for('products'))
-        
+            return render_template('products.html', products=get_all_products(), cart_sum=sum(cart.values()))
+        except Exception as e:
+            print(e)
+            return redirect(url_for('products'))
     else:
-        return render_template('products.html', products=get_all_products(),cart=0)
-        
+        try:
+            return render_template('./products.html', products=get_all_products(), cart_sum=sum(session.get('cart', {}).values()))
+        except Exception as e:
+            print(e)
+            return render_template('./products.html', products=get_all_products(), cart_sum=0)  
     
-
+@app.route("/home/clearCart", methods=["POST"])
+def clearCart():
+    session.pop('cart', None)
+    return redirect(url_for('cart'))
 app.secret_key = "secret"
 if __name__ == "__main__":
     app.run(debug=True)
