@@ -14,7 +14,7 @@
             </div>
             <div class="cart_buttons">
                 <span class="cart_buttons2">
-                    <a class="cart_word"href="/home/cart">Your cart</a>
+                    <a class="cart_word"href="/home/cart">Your cart {{cart}}</a>
                 </span>
             </div>
         </div>
@@ -25,7 +25,11 @@
             <div class="product1_n_p">
                 <span><h1 class="product1_name">{{prod_cont[1]}}</h1></span>
                 <span><h1 class="product1_price">{{prod_cont[2]}}$</h1></span>
-                </span><button class="add-to-cart" data-product-id="{{prod_cont[0]}}" data-product-name="{{prod_cont[1]}}" data-product-price="{{prod_cont[2]}}">Add to Cart</button>
+                <form action="addToCart" method="post">
+                
+                    <button class="add-to-cart" >Add to Cart {{cart}} </button> 
+                    <input type="hidden" value="{{prod_cont[0]}}" name="id">
+                </form>
             </div>
         </div>
         {% endfor %}
@@ -36,7 +40,7 @@
 
     
 </body>
-  <script>
+ <!--  <script>
         document.addEventListener("DOMContentLoaded", function () {
             const addToCartButtons = document.querySelectorAll('.add-to-cart');
             const cartLink = document.querySelector('.cart_word');
@@ -69,7 +73,7 @@
                 localStorage.setItem('cart', JSON.stringify(cartItems));
             }
         });
-    </script>
+     </script> -->
     
 
 </html>

@@ -43,7 +43,10 @@ def get_all_products():
     
     return cursor.fetchall()
     close()
-    
+def get_prod_by_id(id):
+    open()
+    cursor.execute('''SELECT prod_id, prod_name, prod_price FROM products WHERE prod_id=(?)''',[id])
+    return cursor.fetchone()
 
 def add_products(prod_name, prod_price, prod_img):
     open()
@@ -52,6 +55,7 @@ def add_products(prod_name, prod_price, prod_img):
                    VALUES (?, ?, ? )''', [prod_name, prod_price, prod_img])
     conn.commit()
     close()
+
 #create_tables()
 #show_tables()
 #

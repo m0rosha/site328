@@ -28,9 +28,10 @@
 
                     </div>
                     <p class="txt2">Thank You!</p>
-                    <p class="txt3">Total: <span id="totalAmount">SUM</span></p>
+                    {%for i in cart%}
+                    <p class="txt3">Total: {{total}}$ <span id="totalAmount"></span></p>
                     <a class="checkout_button" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Checkout</a>
-                    
+                    {%endfor%}
                 </div>
 
                 
@@ -43,7 +44,7 @@
 
     
 </body>
-<script>
+<!--<script>
     document.addEventListener("DOMContentLoaded", function () {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -105,6 +106,6 @@
         
 
     });
-</script>
+</script> !-->
 
 </html>
