@@ -51,11 +51,12 @@ def cart():
             
             element = get_prod_by_id(id)
             
-            total += float(element[2]).__round__(2) * elementsId[id]
+            total += float(element[2])* elementsId[id]
+            total1 = round(total,2)
              
             cart.append((element[0], elementsId[id]))
 
-        return render_template('cart.html', cart=cart, total=total,products=get_all_products())
+        return render_template('cart.html', cart=cart, total=total1,products=get_all_products())
     except Exception as e:
         print(e)
         return render_template('cart.html', cart=[],products=get_all_products())
