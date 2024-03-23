@@ -59,5 +59,5 @@ def add_products(prod_name, prod_price, prod_img):
 #create_tables()
 #show_tables()
 #
-#add_products('Potato',0.49,'https://m.media-amazon.com/images/I/313dtY-LOEL._AC_UF1000,1000_QL80_.jpg')
+#add_products('Banana',2.99,'https://ovocheva-poshta.com.ua/images/virtuemart/product/banan8.jpg')
 #show_tables()
